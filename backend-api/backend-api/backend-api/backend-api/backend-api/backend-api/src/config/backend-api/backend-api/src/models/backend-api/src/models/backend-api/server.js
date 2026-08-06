@@ -13,68 +13,69 @@ const app = express();
 
 
 
-// Middleware
-
 app.use(cors());
 
 app.use(express.json());
 
 
 
-// Authentication Route
+// Auth
 
 app.use(
-    "/api/auth",
-    require("./src/routes/authRoutes")
+"/api/auth",
+require("./src/routes/authRoutes")
 );
 
 
 
-// Product Route
+// Products
 
 app.use(
-    "/api/products",
-    require("./src/routes/productRoutes")
+"/api/products",
+require("./src/routes/productRoutes")
 );
 
 
 
-// Order Route
+// Orders
 
 app.use(
-    "/api/orders",
-    require("./src/routes/orderRoutes")
+"/api/orders",
+require("./src/routes/orderRoutes")
 );
 
 
 
-// Test Route
+// Payments
 
-app.get("/", (req,res)=>{
+app.use(
+"/api/payments",
+require("./src/routes/paymentRoutes")
+);
 
 
-    res.json({
 
-        app:"Nimontron API",
+// Test
 
-        status:"Running",
+app.get("/",(req,res)=>{
 
-        message:"Backend Connected Successfully"
 
-    });
+res.json({
+
+app:"Nimontron API",
+
+status:"Running"
+
+});
 
 
 });
 
 
 
-// Database Connection
-
 initializeDatabase();
 
 
-
-// Server Start
 
 const PORT = process.env.PORT || 5000;
 
@@ -82,9 +83,9 @@ const PORT = process.env.PORT || 5000;
 app.listen(PORT,()=>{
 
 
-    console.log(
-        `Nimontron API running on port ${PORT}`
-    );
+console.log(
+`Nimontron API running on port ${PORT}`
+);
 
 
 });
