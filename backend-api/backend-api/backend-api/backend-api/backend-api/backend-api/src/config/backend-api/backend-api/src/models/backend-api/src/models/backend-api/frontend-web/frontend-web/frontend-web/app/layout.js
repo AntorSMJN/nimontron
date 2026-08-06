@@ -1,31 +1,36 @@
+import "./globals.css";
+
+
 export const metadata = {
 
-  title: "Nimontron - Save More Join Nimontron",
+  title:
+  "Nimontron - Save More Join Nimontron",
 
   description:
-    "From Farm Fresh to Customized Lifestyle. Everything you need in one place."
+  "From Farm Fresh to Customized Lifestyle. Everything You Need in One Place."
 
 };
+
 
 
 export default function RootLayout({ children }) {
 
 
-  return (
+return (
 
-    <html lang="bn">
-
-
-      <body>
-
-        {children}
-
-      </body>
+<html lang="bn">
 
 
-    </html>
+<body>
 
-  );
+{children}
+
+</body>
+
+
+</html>
+
+);
 
 
 }
