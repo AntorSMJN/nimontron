@@ -1,151 +1,114 @@
-export default function Home() {
+import Navbar from "../components/Navbar";
 
 
-  const categories = [
+export default function Home(){
 
-    "🥛 Organic Agro Hub",
 
-    "👕 Apparel",
+return (
 
-    "🍰 Bakery",
+<>
 
-    "🎁 Gift Items",
+<Navbar />
 
-    "🏠 Home Decor",
 
-    "💻 Electronics",
+<main>
 
-    "✨ Lifestyle"
 
-  ];
+<section>
 
 
+<h1>
+Nimontron
+</h1>
 
-  return (
 
-    <main>
+<h2>
+Save More Join Nimontron
+</h2>
 
 
-      {/* Hero Section */}
+<p>
+Save Time • Effort • Money
+</p>
 
-      <section>
 
+<p>
+From Farm Fresh to Customized Lifestyle,
+Everything You Need in One Place.
+</p>
 
-        <h1>
-          Nimontron
-        </h1>
 
+<button>
+Join Now
+</button>
 
-        <h2>
-          Save More Join Nimontron
-        </h2>
 
+</section>
 
-        <p>
-          Save your Time, Effort & Money
-        </p>
 
 
-        <p>
-          From Farm Fresh to Customized Lifestyle,
-          Everything You Need in One Place.
-        </p>
+<section>
 
 
-        <button>
-          Join Now
-        </button>
+<h2>
+Organic Agro Hub
+</h2>
 
 
-      </section>
+<p>
+Fresh milk from our own farm.
+Trusted quality delivered to your door.
+</p>
 
 
+<button>
+Explore Fresh Products
+</button>
 
 
+</section>
 
-      {/* Organic Agro Hub */}
 
-      <section>
 
+<section>
 
-        <h2>
-          Organic Agro Hub
-        </h2>
 
+<h2>
+Our Categories
+</h2>
 
-        <p>
-          Fresh milk from our own farm.
-          Trusted quality delivered to your door.
-        </p>
 
+<p>
+🥛 Organic Agro Hub | 👕 Apparel | 🍰 Bakery | 🎁 Gift Items | 🏠 Home Decor | 💻 Electronics | ✨ Lifestyle
+</p>
 
-        <button>
-          Explore Fresh Products
-        </button>
 
+</section>
 
-      </section>
 
 
+<section>
 
 
+<h2>
+Featured Products
+</h2>
 
-      {/* Categories */}
 
-      <section>
+<p>
+Products will appear here from Nimontron API.
+</p>
 
 
-        <h2>
-          Our Categories
-        </h2>
+</section>
 
 
-        <div>
+</main>
 
 
-          {
-            categories.map((item,index)=>(
+</>
 
-              <div key={index}>
+);
 
-                {item}
-
-              </div>
-
-            ))
-          }
-
-
-        </div>
-
-
-      </section>
-
-
-
-
-
-      {/* Product Placeholder */}
-
-      <section>
-
-
-        <h2>
-          Featured Products
-        </h2>
-
-
-        <p>
-          Products will appear here from Nimontron API.
-        </p>
-
-
-      </section>
-
-
-
-    </main>
-
-  );
 
 }
