@@ -27,6 +27,14 @@ app.use(
 );
 
 
+// Product Route
+
+app.use(
+    "/api/products",
+    require("./src/routes/productRoutes")
+);
+
+
 // Test Route
 
 app.get("/", (req, res) => {
@@ -46,15 +54,14 @@ app.get("/", (req, res) => {
 });
 
 
-// Start Server
-
-const PORT = process.env.PORT || 5000;
-
-
 // Database Connection
 
 initializeDatabase();
 
+
+// Start Server
+
+const PORT = process.env.PORT || 5000;
 
 
 app.listen(PORT, () => {
