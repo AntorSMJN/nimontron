@@ -12,11 +12,13 @@ const initializeDatabase = require("./src/database/init");
 const app = express();
 
 
+
 // Middleware
 
 app.use(cors());
 
 app.use(express.json());
+
 
 
 // Authentication Route
@@ -27,6 +29,7 @@ app.use(
 );
 
 
+
 // Product Route
 
 app.use(
@@ -35,18 +38,28 @@ app.use(
 );
 
 
+
+// Order Route
+
+app.use(
+    "/api/orders",
+    require("./src/routes/orderRoutes")
+);
+
+
+
 // Test Route
 
-app.get("/", (req, res) => {
+app.get("/", (req,res)=>{
 
 
     res.json({
 
-        app: "Nimontron API",
+        app:"Nimontron API",
 
-        status: "Running",
+        status:"Running",
 
-        message: "Backend Connected Successfully"
+        message:"Backend Connected Successfully"
 
     });
 
@@ -54,17 +67,19 @@ app.get("/", (req, res) => {
 });
 
 
+
 // Database Connection
 
 initializeDatabase();
 
 
-// Start Server
+
+// Server Start
 
 const PORT = process.env.PORT || 5000;
 
 
-app.listen(PORT, () => {
+app.listen(PORT,()=>{
 
 
     console.log(
