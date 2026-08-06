@@ -11,61 +11,76 @@ const Order = require("./Order");
 
 const Subscription = require("./Subscription");
 
+const Payment = require("./Payment");
 
 
-// Category - Product
 
-Category.hasMany(Product, {
-    foreignKey: "categoryId"
+// Category Product
+
+Category.hasMany(Product,{
+    foreignKey:"categoryId"
 });
 
 
-Product.belongsTo(Category, {
-    foreignKey: "categoryId"
-});
-
-
-
-// User - Order
-
-User.hasMany(Order, {
-    foreignKey: "userId"
-});
-
-
-Order.belongsTo(User, {
-    foreignKey: "userId"
+Product.belongsTo(Category,{
+    foreignKey:"categoryId"
 });
 
 
 
-// User - Subscription
+// User Order
 
-User.hasMany(Subscription, {
-    foreignKey: "userId"
+User.hasMany(Order,{
+    foreignKey:"userId"
 });
 
 
-Subscription.belongsTo(User, {
-    foreignKey: "userId"
-});
-
-
-
-// Product - Subscription
-
-Product.hasMany(Subscription, {
-    foreignKey: "productId"
-});
-
-
-Subscription.belongsTo(Product, {
-    foreignKey: "productId"
+Order.belongsTo(User,{
+    foreignKey:"userId"
 });
 
 
 
-module.exports = {
+// User Subscription
+
+User.hasMany(Subscription,{
+    foreignKey:"userId"
+});
+
+
+Subscription.belongsTo(User,{
+    foreignKey:"userId"
+});
+
+
+
+// Product Subscription
+
+Product.hasMany(Subscription,{
+    foreignKey:"productId"
+});
+
+
+Subscription.belongsTo(Product,{
+    foreignKey:"productId"
+});
+
+
+
+// Order Payment
+
+Order.hasOne(Payment,{
+    foreignKey:"orderId"
+});
+
+
+Payment.belongsTo(Order,{
+    foreignKey:"orderId"
+});
+
+
+
+module.exports={
 
     sequelize,
 
@@ -77,6 +92,8 @@ module.exports = {
 
     Order,
 
-    Subscription
+    Subscription,
+
+    Payment
 
 };
