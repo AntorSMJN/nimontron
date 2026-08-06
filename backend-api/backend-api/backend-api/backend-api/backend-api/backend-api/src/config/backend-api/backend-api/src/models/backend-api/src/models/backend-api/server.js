@@ -19,7 +19,7 @@ app.use(express.json());
 
 
 
-// Auth
+// Authentication
 
 app.use(
 "/api/auth",
@@ -51,6 +51,15 @@ require("./src/routes/orderRoutes")
 app.use(
 "/api/payments",
 require("./src/routes/paymentRoutes")
+);
+
+
+
+// Admin
+
+app.use(
+"/api/admin",
+require("./src/routes/adminRoutes")
 );
 
 
