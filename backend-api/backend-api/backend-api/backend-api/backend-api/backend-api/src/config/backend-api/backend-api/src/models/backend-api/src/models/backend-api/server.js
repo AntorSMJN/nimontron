@@ -55,11 +55,20 @@ require("./src/routes/paymentRoutes")
 
 
 
-// Admin
+// Admin Product
 
 app.use(
 "/api/admin",
 require("./src/routes/adminRoutes")
+);
+
+
+
+// Admin Orders
+
+app.use(
+"/api/admin/orders",
+require("./src/routes/adminOrderRoutes")
 );
 
 
